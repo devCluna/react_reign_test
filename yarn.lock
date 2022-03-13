@@ -210,7 +210,7 @@
     "@babel/plugin-syntax-jsx" "^7.16.7"
     "@babel/types" "^7.17.0"
 
-"@babel/runtime@^7.15.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.15.4", "@babel/runtime@^7.17.0", "@babel/runtime@^7.9.2":
   version "7.17.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
   integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
@@ -267,6 +267,13 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@redux-devtools/extension@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@redux-devtools/extension/-/extension-3.2.2.tgz#2d6da4df2c4d32a0aac54d824e46f52b1fd9fc4d"
+  integrity sha512-fKA2TWNzJF7wXSDwBemwcagBFudaejXCzH5hRszN3Z6B7XEJtEmGD77AjV0wliZpIZjA/fs3U7CejFMQ+ipS7A==
+  dependencies:
+    "@babel/runtime" "^7.17.0"
 
 "@rollup/pluginutils@^4.1.2":
   version "4.2.0"
