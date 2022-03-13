@@ -1,20 +1,24 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import NewsItem from '../NewsItem/NewsItem'
 import './NewsContainer.css'
 import arrow from '../../assets/svg/up-arrow.svg'
+import axios from 'axios'
 
 const NewsContainer = () => {
+  const [data, setData] = useState([])
+
+  useEffect(()=>{
+    axios.get('https://hn.algolia.com/api/v1/search_by_date?query=vue&page=0&hitsPerPage=8')
+      .then(res => {
+        setData(res.data.hits)
+      })
+  },[])
   return (
     <div style={{display: "flex", flexDirection: "column"}}>
       <div className="newsContainer">
-        <NewsItem picked={true}/>
-        <NewsItem picked={false}/>
-        <NewsItem picked={true}/>
-        <NewsItem picked={false}/>
-        <NewsItem picked={true}/>
-        <NewsItem picked={true}/>
-        <NewsItem picked={false}/>
-        <NewsItem picked={false}/>
+      {data.map(item => (
+        <NewsItem key={item.objectID} picked={true} data={item}/>
+      ))}
       </div>
 
       <div className='newsPage-counter'>
