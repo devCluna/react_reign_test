@@ -1,8 +1,8 @@
-import { PICK_NEWS } from "./newsSelectorTypes"
+import { FETCH_NEWS_FAIL, FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, PICK_NEWS } from "./newsSelectorTypes"
 
 const initialState = {
     news: 'angular',
-    newsApiRoute: `https://hn.algolia.com/api/v1/search_by_date?query=angular&page=0`
+    newsData: {},
 }
 
 const newsSelectorReducer = (state = initialState, action) => {
@@ -10,8 +10,23 @@ const newsSelectorReducer = (state = initialState, action) => {
         case PICK_NEWS:
             return {
                 news: action.payload,
-                newsApiRoute: `https://hn.algolia.com/api/v1/search_by_date?query=${action.payload}&page=0`
+                newsData: {}
             }
+        case FETCH_NEWS_REQUEST:
+            return {
+                ...state
+            }
+        case FETCH_NEWS_SUCCESS:
+            return {
+                ...state,
+                newsData: action.payload
+            }
+        case FETCH_NEWS_FAIL:
+        return {
+            loading: false,
+            users: [],
+            error: action.payload
+        }
         default: return state
     }
 }
