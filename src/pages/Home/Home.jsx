@@ -7,10 +7,12 @@ import NewsSelector from '../../components/NewsSelector/NewsSelector'
 import { fetchNews } from '../../redux/newsSelector/newsSelectorActions'
 import './Home.css'
 
+const currentNewsSelected = localStorage.getItem('currentNewsSelected')
+
 const Home = () => {
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(fetchNews('angular',0))
+    dispatch(fetchNews(currentNewsSelected,0))
   },[])
 
   return (
