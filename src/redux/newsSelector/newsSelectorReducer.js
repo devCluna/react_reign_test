@@ -24,7 +24,6 @@ const newsSelectorReducer = (state = initialState, action) => {
         case FETCH_NEWS_FAIL:
         return {
             loading: false,
-            users: [],
             error: action.payload
         }
         default: return state
