@@ -1,12 +1,25 @@
-import React,{useState} from 'react'
+import React,{useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeOptions } from '../../redux/navOptions/navOptionsActions'
 import './NavOptions.css'
 
 const NavOptions = () => {
-  const [toggleOption, setToggleOption] = useState(true)
+  const dispatch = useDispatch()
+  const navOption = useSelector(state => state.navOptions.currentOption)
+
+  useEffect(()=>{
+    // console.log(navOption)
+  },[])
+
   return (
     <div className='navOptions'>
-        <div onClick={()=>setToggleOption(true)} className= {toggleOption ? 'navOption navOption-left left-selected': 'navOption navOption-left'} >All</div>
-        <div onClick={()=>setToggleOption(false)} className={toggleOption ?'navOption navOption-right' : 'navOption navOption-right right-selected'} >My faves</div>
+        <div onClick={()=>{
+          dispatch(changeOptions(true))
+        }} className= {navOption ? 'navOption navOption-left left-selected': 'navOption navOption-left'} >All</div>
+        
+        <div onClick={()=>{
+          dispatch(changeOptions(false))
+        }} className={navOption ?'navOption navOption-right' : 'navOption navOption-right right-selected'} >My faves</div>
     </div>
   )
 }
