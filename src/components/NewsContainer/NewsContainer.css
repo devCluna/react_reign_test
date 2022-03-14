@@ -12,11 +12,14 @@
     display: flex;
     align-self:center;
     list-style: none;
+    padding: 0;
+
 }
 
 .newsPage-counter img{
     /* transform: rotate(270deg); */
     width: 12px;
+
 }
 .newsPage-arrow-counter{
     cursor: pointer;
@@ -82,4 +85,16 @@
         margin-left: 150px;
         margin-right: 150px;
     }
+}
+
+@media screen and (min-width:1400px){
+    .newsContainer{
+        gap: 30px;
+        height: 450px;
+    }
+    .newsPage-counter{
+        margin-top: 96px;
+        margin-bottom: 98px;
+    }
+
 }

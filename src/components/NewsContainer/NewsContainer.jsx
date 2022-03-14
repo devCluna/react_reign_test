@@ -13,12 +13,19 @@ const NewsContainer = () => {
   const navOption = useSelector(state => state.navOptions.currentOption)
   const newsData = useSelector(state => state.newsSelector.newsData)
   const likedNews = useSelector(state => state.favNews.likedNews)
+  const [pageNumber, setPageNumber] = useState(0);
 
   const pageCount = Math.ceil(newsData.nbPages / newsData.hitsPerPage)
+  const pagesVisited = pageNumber * 8;
+  const pageCountFavNews = Math.ceil(likedNews.length / 8)
 
   const changePages = ({ selected }) => {
       dispatch(changePage(selected))
-      dispatch(fetchNews(state.newsSelector.news, state.newsPagination.currentPage))
+      dispatch(fetchNews(state.newsSelector.news, selected))
+  }
+
+  const changePageFavNews = ({selected}) => {
+    setPageNumber(selected)
   }
 
   return (
@@ -51,10 +58,24 @@ const NewsContainer = () => {
     : 
     <div style={{display: "flex", flexDirection: "column"}}>
       <div className="newsContainer">
-      {likedNews.map(item => {
+      {likedNews.slice(pagesVisited,pagesVisited + 8).map(item => {
         return (<NewsItem key={item.objectID} picked={likedNews.some(news => news.objectID === item.objectID ? true: false)} data={item}/>)
       })}
       </div>
+
+      {likedNews.length >0 &&
+        <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        pageCount={pageCountFavNews}
+        containerClassName ={"newsPage-counter"}
+        onPageChange={changePageFavNews}
+        pageClassName={"pages-item"}
+        breakClassName={"pages-item"}
+        previousLinkClassName={"newsPage-arrow-counter"}
+        nextLinkClassName={"newsPage-arrow-counter"}
+        activeClassName={"page-item-selected"}
+      />}
     </div>
     }
     

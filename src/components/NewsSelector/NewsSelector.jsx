@@ -54,17 +54,20 @@ const NewsSelector = () => {
         <div ref={selectorRef} className="newsSelector-holder" onClick={()=>{
             setToggleSelector(!toggleSelector)
         }}>
-            {!optionSelector ? "Select your news" : optionSelector}
+            {localStorage.getItem('currentDisplayName') === undefined || localStorage.getItem('currentDisplayName') === null ? "Select your news" : localStorage.getItem('currentDisplayName')}
+            {/* {!optionSelector ? "Select your news" : optionSelector} */}
             <img src={arrow}/>
         </div>
 
         <div className={toggleSelector ? 'newsSelector-options': 'unselected-options'}>
             {arrayNewsSelector.map(newsType => (
                 <div key={newsType.id} className='newsSelector-option' onClick={()=>{
-                    setToggleSelector(!toggleSelector)
+                    // setToggleSelector(!toggleSelector)
                     setOptionSelector(newsType.displayName)
                     pickNewsDispatch(pickNews(newsType.name))
-                    pickNewsDispatch(fetchNews(state.newsSelector.news, state.newsPagination.currentPage))
+                    pickNewsDispatch(fetchNews(newsType.name, state.newsPagination.currentPage))
+                    localStorage.setItem('currentNewsSelected', newsType.name)
+                    localStorage.setItem('currentDisplayName', newsType.displayName)
                 }}>
                     <img className='newsSelector-option-icon' src={newsType.imgSrc}/>
                     {newsType.displayName}
