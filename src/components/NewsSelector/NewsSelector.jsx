@@ -11,6 +11,7 @@ const NewsSelector = () => {
     const [toggleSelector, setToggleSelector] = useState(false)
     const [optionSelector, setOptionSelector] = useState()
     const selectorRef = useRef()
+    const navOption = useSelector(state => state.navOptions.currentOption)
     const pickNewsDispatch = useDispatch()
     const state = useSelector(state => state)
 
@@ -48,7 +49,8 @@ const NewsSelector = () => {
     
 
   return (
-    <div className="newsSelector">
+      <>
+      <div className="newsSelector" style={{visibility: navOption ? 'visible' : 'hidden'}}>
         <div ref={selectorRef} className="newsSelector-holder" onClick={()=>{
             setToggleSelector(!toggleSelector)
         }}>
@@ -71,6 +73,8 @@ const NewsSelector = () => {
             }
         </div>
     </div>
+      </>
+    
   )
 }
 
