@@ -1,7 +1,7 @@
 .newsItem {
   cursor: pointer;
   height: 80px;
-  padding: 0 0 0 26px;
+
   opacity: 0.8;
   border-radius: 6px;
   border: solid 2px #979797;
@@ -16,6 +16,7 @@
 
 .newsItem-body{
   display: flex;
+  padding: 0 15px 0 15px;
   flex-direction: column;
   justify-content: center;
   width: 90%;
@@ -67,7 +68,7 @@
 
 .newsItem-button-holder {
   width: 68px;
-  margin: 0 0 0 16px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
