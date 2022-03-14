@@ -49,7 +49,7 @@
 # About
 <!-- ABOUT THE PROJECT -->
 ### Description
-Hackernews is a metasearch engine related to the 3 most popular frontend development frameworks of the moment (React, Angular, Vue), it collects a large number of articles from various sources such as magazines, press, blogs, forums, interviews, youtube-videos; etc. It is currently being supported by [Algolia](https://www.algolia.com/) and developed by the (Reign.cl)[https://www.reign.cl/es/] team. 
+Hackernews is a metasearch engine related to the 3 most popular frontend development frameworks of the moment (React, Angular, Vue), it collects a large number of articles from various sources such as magazines, press, blogs, forums, interviews, youtube-videos; etc. It is currently being supported by [Algolia](https://www.algolia.com/) and developed by the [Reign.cl](https://www.reign.cl/es/) team. 
 
 # Getting Started
 ### Prerequisites
