@@ -7,10 +7,6 @@ const NavOptions = () => {
   const dispatch = useDispatch()
   const navOption = useSelector(state => state.navOptions.currentOption)
 
-  useEffect(()=>{
-    // console.log(navOption)
-  },[])
-
   return (
     <div className='navOptions'>
         <div onClick={()=>{
