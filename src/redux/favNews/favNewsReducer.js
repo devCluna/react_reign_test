@@ -1,7 +1,7 @@
 import { DISLIKE_NEWS, LIKE_NEWS } from "./favNewsTypes"
 
 const initialState = {
-    likedNews: JSON.parse(localStorage.getItem('likedNews'))
+    likedNews: JSON.parse(localStorage.getItem('likedNews')) === null || JSON.parse(localStorage.getItem('likedNews'))=== undefined ? [] : JSON.parse(localStorage.getItem('likedNews'))
   }
 
 const favNewsReducer = (state = initialState, action) => {
