@@ -13,7 +13,7 @@ const NewsItem = ({picked, data}) => {
 
   return (
     <div className="newsItem">
-      <div className="newsItem-body">
+      <div className="newsItem-body" onClick={()=> data.url ? window.open(data.url, "_blank") : window.open(data.story_url, "_blank")}>
         <div className="newsItem-head">
           <img className="newsItem-watchIcon" src={watchIcon}/>
           <span className="newsItem-author-time">2 hours ago by {data.author} </span>
