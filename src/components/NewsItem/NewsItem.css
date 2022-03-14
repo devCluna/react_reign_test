@@ -96,3 +96,19 @@
   }
 
 }
+
+@media screen and (min-width: 1400px){
+  .newsItem{
+    width: 550px;
+    height: 90px;
+    
+  }
+
+  .newsItem-button-holder{
+    width: 68px;
+  }
+  
+  .newsItem-favIcon{
+    width: 24px;
+  }
+}

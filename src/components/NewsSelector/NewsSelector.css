@@ -70,3 +70,11 @@
     }
     
 }
+
+@media screen and (min-width: 1400px){
+    .newsSelector{
+        margin-top: 68px;
+        margin-bottom: 38px;
+    }
+    
+}
