@@ -21,7 +21,7 @@ const NewsContainer = () => {
 
   const changePages = ({ selected }) => {
       dispatch(changePage(selected))
-      dispatch(fetchNews(state.newsSelector.news, state.newsPagination.currentPage))
+      dispatch(fetchNews(state.newsSelector.news, selected))
   }
 
   const changePageFavNews = ({selected}) => {
