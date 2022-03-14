@@ -29,26 +29,24 @@
 .navOption-right{
     border-left: 0px;
     border-top-left-radius: 0;
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
 .navOption-left{
+    border-right: 0px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .right-selected{
-    border-top: 1px solid #1797ff;
-    border-right: 1px solid #1797ff;
-    border-bottom: 1px solid #1797ff;
+    border: 1px solid #1797ff;
     color: #1797ff;
 }
 
 .left-selected{
-    border-top: 1px solid #1797ff;
-    border-left: 1px solid #1797ff;
-    border-bottom: 1px solid #1797ff;
+    border: 1px solid #1797ff;
+    /* border-left: 1px solid #1797ff;
+    border-bottom: 1px solid #1797ff; */
     color: #1797ff;
     
 }
