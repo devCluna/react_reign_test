@@ -49,7 +49,7 @@
 # About
 <!-- ABOUT THE PROJECT -->
 ### Description
-Hackernews is a metasearch engine related to the 3 most popular frontend development frameworks of the moment (React, Angular, Vue), it collects a large number of articles from various sources such as magazines, press, blogs, forums, interviews, youtube-videos; etc. It is currently being supported by [Algolia](https://www.algolia.com/) and developed by the (Reign.cl)[https://www.reign.cl/es/] team. 
+Hackernews is a metasearch engine related to the 3 most popular frontend development frameworks of the moment (React, Angular, Vue), it collects a large number of articles from various sources such as magazines, press, blogs, forums, interviews, youtube-videos; etc. It is currently being supported by [Algolia](https://www.algolia.com/) and developed by the [Reign.cl](https://www.reign.cl/es/) team. 
 
 # Getting Started
 ### Prerequisites
@@ -81,9 +81,6 @@ Yarn run dev
 By default your app is going to run on http://localhost:3000
 
 
-### Deploy
-
-
 
 # Built With
 
@@ -106,9 +103,7 @@ Contributions, [issues](https://github.com/devCluna/react-spotify-clone-node/iss
 5.	Open a Pull Request
 
 # Special Thanks
-
-
-# Author
+I want to say thanks to the Reign HR team for this opportunity, which allowed me to remember some basic core concepts about react and how it works. In addition to showing my skills in developing user interfaces with this technology stack. Finally, I wish the applicants the best of luck with their own technical tests. 
 
 **Cristhian Luna**
 - ***Website:*** [devCluna.com](https://www.devcluna.com)
@@ -121,3 +116,7 @@ Contributions, [issues](https://github.com/devCluna/react-spotify-clone-node/iss
 **All rights reserved to Reign.cl and respective trademarks owners** ©2022
 
 This Project is [MIT](https://github.com/devCluna/react_reign_test/blob/master/License) licensed.
+
+# Disclaimer
+
+All statements exposed in this README.md file are purely fictitious.
