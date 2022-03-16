@@ -7,7 +7,7 @@ import watchIcon from '../../assets/svg/iconmonstr-time-2.svg'
 import { useDispatch, useSelector } from "react-redux";
 import { dislikeNews, likeNews } from "../../redux/favNews/favNewsActions";
 
-const NewsItem = ({picked, data}) => {
+const NewsItem = ({picked, data, date}) => {
   const dispatch = useDispatch()
   const likedNews = useSelector(state => state.favNews.likedNews)
 
@@ -16,7 +16,7 @@ const NewsItem = ({picked, data}) => {
       <div className="newsItem-body" onClick={()=> data.url ? window.open(data.url, "_blank") : window.open(data.story_url, "_blank")}>
         <div className="newsItem-head">
           <img className="newsItem-watchIcon" src={watchIcon}/>
-          <span className="newsItem-author-time">2 hours ago by {data.author} </span>
+          <span className="newsItem-author-time">{date} ago by {data.author} </span>
         </div>
 
         <div className="newsItem-description">{data.story_title ? data.story_title : data.title}</div>
