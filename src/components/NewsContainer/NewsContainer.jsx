@@ -19,6 +19,12 @@ const NewsContainer = () => {
   const pagesVisited = pageNumber * 8;
   const pageCountFavNews = Math.ceil(likedNews.length / 8)
 
+  const getHours = (postDate, currentDate) => {
+    const milliseconds = Math.abs(currentDate - new Date(postDate))
+    const hours = milliseconds /36e5
+     return hours < 1 ? `${Math.floor(hours * 60)} minutes`  : `${Math.round(hours)} hours`
+  }
+
   const changePages = ({ selected }) => {
       dispatch(changePage(selected))
       dispatch(fetchNews(state.newsSelector.news, selected))
@@ -37,7 +43,7 @@ const NewsContainer = () => {
       
       {newsData.hits?.map(item => {
         
-        return (<NewsItem key={item.objectID} picked={likedNews.some(news => news.objectID === item.objectID ? true: false)} data={item}/>)
+        return (<NewsItem key={item.objectID} picked={likedNews.some(news => news.objectID === item.objectID ? true: false)} data={item} date={getHours(item.created_at, new Date)}/>)
       })}
       </div>
    
@@ -59,7 +65,7 @@ const NewsContainer = () => {
     <div style={{display: "flex", flexDirection: "column"}}>
       <div className="newsContainer">
       {likedNews.slice(pagesVisited,pagesVisited + 8).map(item => {
-        return (<NewsItem key={item.objectID} picked={likedNews.some(news => news.objectID === item.objectID ? true: false)} data={item}/>)
+        return (<NewsItem key={item.objectID} picked={likedNews.some(news => news.objectID === item.objectID ? true: false)} data={item} date={getHours(item.created_at, new Date)}/>)
       })}
       </div>
 
